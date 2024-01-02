@@ -16,7 +16,6 @@ import lombok.ToString;
 
 @NoArgsConstructor
 @AllArgsConstructor
-@RequiredArgsConstructor
 @Getter
 @Setter
 @ToString
@@ -29,10 +28,8 @@ public class Student {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
-	@Nonnull
 	private String name;
-	
-	@Nonnull
+
 	private String pw;
 	
 	private long targetId;

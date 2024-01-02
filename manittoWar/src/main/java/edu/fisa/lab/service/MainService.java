@@ -22,19 +22,28 @@ public class MainService {
 	@Autowired
 	BoardDAO boardDAO;
 	
-	public ArrayList<String> myStudent(Long id) {
-		ArrayList<String> list = new ArrayList<>();
-		
-		Student student = studentDAO.findById(id).orElseThrow();
-		
-		Student target = studentDAO.findById(student.getTargetId()).orElseThrow();
-		
-		StudentResDto studentResDto = new StudentResDto(target.getName());
-		String targetName = studentResDto.getName();
-		list.add(student.getName());
-		list.add(targetName);
-		
-		return list;
+//	public ArrayList<String> myNameAndManitto(String name) {
+//		ArrayList<String> list = new ArrayList<>();
+//		Student student = studentDAO.findById(id).orElseThrow();
+//		
+//		Student target = studentDAO.findById(student.getTargetId()).orElseThrow();
+//		
+//		StudentResDto studentResDto = new StudentResDto(target.getName());
+//		String targetName = studentResDto.getName();
+//		list.add(student.getName());
+//		list.add(targetName);
+//		
+//		return list;
+//	}
+	
+	public boolean isValidUser(String userId, String userPw) {
+		Student student = studentDAO.findByName(userId);
+	    return student != null && student.getPw().equals(userPw);
+	}
+	
+	public long findId(String userId) {
+		long id = studentDAO.findIdByName(userId);
+		return id;
 	}
 	
 	
