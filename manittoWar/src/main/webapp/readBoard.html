@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>게시판 조회</title>
+</head>
+<body>
+  <h2>게시판 조회</h2>
+
+  <table border="1">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>제목</th>
+        <th>내용</th>
+      </tr>
+    </thead>
+    <tbody id="boardTableBody">
+      <!-- 여기에 게시글이 동적으로 추가됩니다 -->
+    </tbody>
+  </table>
+
+  <script>
+    // 실제로는 서버에서 게시글 데이터를 받아와야 하지만, 여기서는 임시 데이터를 사용합니다.
+    const boardData = [
+      { boardId: 1, title: '첫 번째 글', content: '첫 번째 글의 내용' },
+      { boardId: 2, title: '두 번째 글', content: '두 번째 글의 내용' },
+      { boardId: 3, title: '세 번째 글', content: '세 번째 글의 내용' }
+      // ... 게시글 데이터가 더 있다고 가정합니다.
+    ];
+
+    const boardTableBody = document.getElementById('boardTableBody');
+    boardData.forEach(board => {
+      const row = `
+        <tr>
+          <td>${board.boardId}</td>
+          <td>${board.title}</td>
+          <td>${board.content}</td>
+        </tr>
+      `;
+      boardTableBody.innerHTML += row;
+    });
+  </script>
+</body>
+</html>
