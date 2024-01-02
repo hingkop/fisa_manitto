@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
+<% System.out.println("+++++"); %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -59,7 +62,7 @@ body {
 	</div>
 
 	<div class="button-container">
-		<button class="button" onclick="goToPage('/myMnitto.html')">내 마니또
+		<button class="button" onclick="goToPage('/myManitto.html')">내 마니또
 			확인하기</button>
 		<button class="button" onclick="goToPage('/writeBoard.html')">편지
 			게시하기</button>
@@ -67,7 +70,7 @@ body {
 	</div>
 
 	<div>
-		<button id="hideButton"  onclick="goToPage('/openManitto.html')" disabled>전체 확인</button>
+		<button id="hideButton" onclick="goToPage('/openManitto.html')" disabled>전체 확인</button>
 	</div>
 
 	<script>

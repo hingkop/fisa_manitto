@@ -3,25 +3,70 @@
 <head>
 <meta charset="UTF-8">
 <title>게시판 조회</title>
+<style>
+/* 기존 CSS */
+body {
+	font-family: Arial, sans-serif;
+	text-align: center;
+	background-color: #f4f4f4;
+	margin: 0;
+	padding: 0;
+}
+
+h2 {
+	margin-top: 20px;
+}
+
+table {
+	width: 80%;
+	margin: 20px auto;
+	border-collapse: collapse;
+	border: 1px solid #dddddd;
+}
+
+th, td {
+	border: 1px solid #dddddd;
+	text-align: left;
+	padding: 8px;
+}
+
+th {
+	background-color: #f2f2f2;
+}
+
+button {
+	padding: 10px 20px;
+	background-color: #3498db;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	position: absolute;
+	top: 20px;
+	right: 20px;
+}
+</style>
 </head>
 <body>
-  <h2>게시판 조회</h2>
+	<h2>게시판 조회</h2>
 
-  <table border="1">
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>제목</th>
-        <th>내용</th>
-      </tr>
-    </thead>
-    <tbody id="boardTableBody">
-      <!-- 여기에 게시글이 동적으로 추가됩니다 -->
-    </tbody>
-  </table>
+	<table>
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>제목</th>
+				<th>내용</th>
+			</tr>
+		</thead>
+		<tbody id="boardTableBody">
+			<!-- 여기에 게시글이 동적으로 추가됩니다 -->
+		</tbody>
+	</table>
 
-  <script>
-    // 실제로는 서버에서 게시글 데이터를 받아와야 하지만, 여기서는 임시 데이터를 사용합니다.
+	<button onclick="goToMyPage()">마이페이지</button>
+
+	<script>
+    // 게시글 데이터
     const boardData = [
       { boardId: 1, title: '첫 번째 글', content: '첫 번째 글의 내용' },
       { boardId: 2, title: '두 번째 글', content: '두 번째 글의 내용' },
@@ -29,6 +74,7 @@
       // ... 게시글 데이터가 더 있다고 가정합니다.
     ];
 
+    // 게시글 테이블에 데이터 추가
     const boardTableBody = document.getElementById('boardTableBody');
     boardData.forEach(board => {
       const row = `
@@ -40,6 +86,11 @@
       `;
       boardTableBody.innerHTML += row;
     });
+
+    // 마이페이지로 이동하는 함수
+    function goToMyPage() {
+      window.location.href = '/myPage.html';
+    }
   </script>
 </body>
 </html>

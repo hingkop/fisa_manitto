@@ -1,10 +1,90 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Layout</title>
+<style>
+body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	margin: 0;
+}
+
+button {
+	font-size: 2vw;
+	padding: 1.5vw 3vw;
+	margin: 2vh 0;
+	background-color: #3498db;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+table-container {
+	max-height: 70vh;
+	overflow: auto;
+	width: 80%;
+	margin-top: 2vh;
+	margin-bottom: 2vh;
+}
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+th, td {
+	border: 1px solid #dddddd;
+	text-align: left;
+	padding: 1vw;
+}
+
+th {
+	background-color: #f2f2f2;
+}
+</style>
 </head>
 <body>
+	<button type="button" onclick="createManitto()">마니또 생성하기</button>
 
+	<table-container>
+	<table>
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>이름</th>
+				<th>Target ID</th>
+				<th>Target 이름</th>
+			</tr>
+		</thead>
+		<tbody>
+			<!-- 여기에 나중에 디비에서 불러온 데이터를 동적으로 추가할 예정. 밑은 예시 데이터  -->
+			<tr>
+				<td>1</td>
+				<td>John</td>
+				<td>2</td>
+				<td>Jane</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>Jane</td>
+				<td>1</td>
+				<td>John</td>
+			</tr>
+
+		</tbody>
+	</table>
+	</table-container>
+
+	<script>
+		function createManitto() {
+			// 마니또 생성 로직 구현해야함
+		}
+	</script>
 </body>
 </html>

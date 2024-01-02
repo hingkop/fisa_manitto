@@ -2,6 +2,8 @@ package edu.fisa.lab.domain.entity;
 
 import jakarta.annotation.Nonnull;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.SequenceGenerator;
 import lombok.AllArgsConstructor;
@@ -24,7 +26,7 @@ import lombok.ToString;
 public class Student {
 
 	@Id
-	@SequenceGenerator(name = "std_seq", sequenceName = "std_seq_id", initialValue = 1, allocationSize = 50)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
 	@Nonnull
